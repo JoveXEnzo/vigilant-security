@@ -1,46 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vigilant Proprietary Security</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional security services in Upland and Anaheim, CA. Armed guards, patrols, and event security.">
+    <title>Vigilant Proprietary Security</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- For icons -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="navbar"></div> <!-- Loaded via script.js -->
 
-  <!-- NAVBAR -->
-  <div id="navbar"></div>
+    <section id="hero" class="parallax">
+        <video id="heroVideo" autoplay muted loop playsinline>
+            <source src="images/hero.mp4" type="video/mp4"> <!-- Add your security-themed video here -->
+        </video>
+        <div class="hero-content">
+            <img src="vigilant.PNG" alt="Vigilant Proprietary Security Logo" class="logo animate-fade-in">
+            <h1 class="animate-slide-up">VIGILANT PROPRIETARY SECURITY</h1>
+            <p class="animate-slide-up">Professional Security Services in Upland & Anaheim</p>
+            <a href="services.html" class="btn animate-bounce">View Our Services</a>
+        </div>
+    </section>
 
-  <!-- HERO -->
-  <section id="hero">
-    <img src="vigilancelogo.PNG" alt="Vigilant Logo">
-    <h1>VIGILANT PROPRIETARY SECURITY</h1>
-    <p>Professional Security Services in Upland & Anaheim</p>
-    <a href="services.html" class="btn">View Our Services</a>
-  </section>
+    <section id="services-preview">
+        <h2>Our Core Services</h2>
+        <div class="services-grid">
+            <div class="service-card animate-card" role="button" tabindex="0">
+                <img src="images/armed-guard.jpg" alt="Armed Security Guard" loading="lazy">
+                <h3>Armed Security</h3>
+                <p>Highly trained guards for high-risk environments.</p>
+            </div>
+            <div class="service-card animate-card" role="button" tabindex="0">
+                <img src="images/patrol-car.jpg" alt="Security Patrol Vehicle" loading="lazy">
+                <h3>Patrol</h3>
+                <p>Mobile patrols ensuring round-the-clock vigilance.</p>
+            </div>
+            <div class="service-card animate-card" role="button" tabindex="0">
+                <img src="images/event-team.jpg" alt="Event Security Team" loading="lazy">
+                <h3>Event Security</h3>
+                <p>Expert crowd control for events of all sizes.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- SERVICES PREVIEW -->
-  <section id="services-preview">
-    <h2>Our Core Services</h2>
-    <div class="services-container">
-      <div class="service-card">
-        <img src="armed.jpg" alt="Armed Security" style="width:100px; margin-bottom:10px;">
-        Armed Security
-      </div>
-      <div class="service-card">
-        <img src="patrol.jpg" alt="Patrol" style="width:100px; margin-bottom:10px;">
-        Patrol
-      </div>
-      <div class="service-card">
-        <img src="event.jpg" alt="Event Security" style="width:100px; margin-bottom:10px;">
-        Event Security
-      </div>
-    </div>
-  </section>
+    <section id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-slider">
+            <!-- JS will handle sliding; add more as needed -->
+            <div class="testimonial"> "Top-notch service!" - Client A </div>
+            <div class="testimonial"> "Reliable and professional." - Client B </div>
+        </div>
+    </section>
 
-  <!-- FOOTER -->
-  <div id="footer"></div>
-
-  <script src="script.js"></script>
+    <div id="footer"></div> <!-- Loaded via script.js -->
+    <script src="script.js"></script>
 </body>
 </html>
