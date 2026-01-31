@@ -8,8 +8,29 @@
   <style>
     /* --- Reset / basic styling --- */
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: Arial, sans-serif; line-height:1.6; }
-    a { text-decoration:none; color:inherit; }
+    body { font-family: Arial, sans-serif; line-height:1.6; background:#f9f9f9; }
+
+    /* --- Code Block Styling for reference --- */
+    .code-block {
+      border: 2px dashed #f39c12;
+      padding: 15px;
+      margin: 20px 0;
+      position: relative;
+      border-radius: 10px;
+      background-color: #f4f4f4;
+    }
+    .code-block::before {
+      content: attr(data-ref) " - " attr(data-desc);
+      position: absolute;
+      top: -18px;
+      left: 10px;
+      font-size: 12px;
+      color: #111;
+      background: #f39c12;
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
 
     /* --- Header / Nav --- */
     header {
@@ -50,9 +71,7 @@
       background-color: #f39c12;
       transition: 0.3s;
     }
-    .nav-links li a:hover::after {
-      width: 100%;
-    }
+    .nav-links li a:hover::after { width: 100%; }
     .nav-links li a:hover { color: #f39c12; }
 
     /* --- Mobile menu --- */
@@ -98,63 +117,75 @@
 </head>
 <body>
 
-  <!-- Header / Nav -->
-  <header>
-    <div class="nav-container">
-      <a href="#home" class="logo">
-        <img src="vigilant.PNG" alt="Vigilance Logo">
-      </a>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="menu-toggle" id="mobile-menu">
-        <span></span>
-        <span></span>
-        <span></span>
+  <!-- Code Ref A1: Header / Nav -->
+  <div class="code-block" data-ref="A1" data-desc="Sticky header with Vigilance logo and navigation links to sections.">
+    <header>
+      <div class="nav-container">
+        <a href="#home" class="logo">
+          <img src="vigilant.PNG" alt="Vigilance Logo">
+        </a>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
+  </div>
 
-  <!-- Home Section -->
-  <section id="home">
-    <img src="vigilant.PNG" alt="Vigilance Logo">
-    <h1>Welcome to Vigilance Proprietary Security</h1>
-    <p>Your trusted partner in professional security services.</p>
-  </section>
+  <!-- Code Ref A2: Home / Hero Section -->
+  <div class="code-block" data-ref="A2" data-desc="Hero section with logo, welcome message, and introductory text.">
+    <section id="home">
+      <img src="vigilant.PNG" alt="Vigilance Logo">
+      <h1>Welcome to Vigilance Proprietary Security</h1>
+      <p>Your trusted partner in professional security services.</p>
+    </section>
+  </div>
 
-  <!-- Services Section -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="gif-grid">
-      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2cxNHk4cnd4ZW56MWlwbGF0NDQ3aGx3dzgxdWdpaXN6Ymdvbm1tZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/p8UYAuBwP5BfZrTM4w/giphy.gif" alt="Service 1">
-      <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnB2ZTBic293dHVxMDRqZjlqdXM1dGFhNGdsYXh3MXRqZG95OWI1NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U04y6eLQGgWrK/giphy.gif" alt="Service 2">
-      <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDluajBmajdvOG10cXRvbHl6cTZodWJremVvNjVxNm9wejMyZTl2MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6MbmTd7iUDK5AiHu/giphy.gif" alt="Service 3">
-      <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2F2MjViNmltM3o3bGlxZWpuMnR6cmRnZHk3d3QzOHk3czR3NTBlYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U5OqOdBmeLH7dKi7qB/giphy.gif" alt="Service 4">
-      <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjZ2aDVkZWl4eTdnbmE5MnlrczczdTlkcHlrYTAzNmVsc25oZHZqMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlPaSlhsnll4yOc/giphy.gif" alt="Service 5">
-      <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGVsbGV5bHRzY3UxYzAzZW04NjN2OXphZ3F4cmF6am52Y25yYWR4dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aZ9thuwFYNjHO/giphy.gif" alt="Service 6">
-      <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZW82cnc1OTloMHE5dGwwaWhveG9ybnQ3OGV1azdwbmt3dWpuMzYydiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MOKWTfBlKmjyE/giphy.gif" alt="Service 7">
-    </div>
-  </section>
+  <!-- Code Ref B1: Services Section -->
+  <div class="code-block" data-ref="B1" data-desc="Services section title and GIF grid of services offered.">
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="gif-grid">
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2cxNHk4cnd4ZW56MWlwbGF0NDQ3aGx3dzgxdWdpaXN6Ymdvbm1tZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/p8UYAuBwP5BfZrTM4w/giphy.gif" alt="Service 1">
+        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnB2ZTBic293dHVxMDRqZjlqdXM1dGFhNGdsYXh3MXRqZG95OWI1NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U04y6eLQGgWrK/giphy.gif" alt="Service 2">
+        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDluajBmajdvOG10cXRvbHl6cTZodWJremVvNjVxNm9wejMyZTl2MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6MbmTd7iUDK5AiHu/giphy.gif" alt="Service 3">
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2F2MjViNmltM3o3bGlxZWpuMnR6cmRnZHk3d3QzOHk3czR3NTBlYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U5OqOdBmeLH7dKi7qB/giphy.gif" alt="Service 4">
+        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjZ2aDVkZWl4eTdnbmE5MnlrczczdTlkcHlrYTAzNmVsc25oZHZqMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlPaSlhsnll4yOc/giphy.gif" alt="Service 5">
+        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGVsbGV5bHRzY3UxYzAzZW04NjN2OXphZ3F4cmF6am52Y25yYWR4dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aZ9thuwFYNjHO/giphy.gif" alt="Service 6">
+        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZW82cnc1OTloMHE5dGwwaWhveG9ybnQ3OGV1azdwbmt3dWpuMzYydiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MOKWTfBlKmjyE/giphy.gif" alt="Service 7">
+      </div>
+    </section>
+  </div>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Vigilance Proprietary Security is committed to providing top-tier security services in Anaheim and Upland, CA. Our trained professionals ensure safety and peace of mind for residential, commercial, and event clients.</p>
-  </section>
+  <!-- Code Ref C1: About Section -->
+  <div class="code-block" data-ref="C1" data-desc="About section with company information and mission statement.">
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Vigilance Proprietary Security is committed to providing top-tier security services in Anaheim and Upland, CA. Our trained professionals ensure safety and peace of mind for residential, commercial, and event clients.</p>
+    </section>
+  </div>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: info@vigilance.com | Phone: (555) 123-4567</p>
-  </section>
+  <!-- Code Ref D1: Contact Section -->
+  <div class="code-block" data-ref="D1" data-desc="Contact section with email and phone information.">
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: info@vigilance.com | Phone: (555) 123-4567</p>
+    </section>
+  </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Vigilance Proprietary Security. All Rights Reserved.</p>
-  </footer>
+  <!-- Code Ref E1: Footer -->
+  <div class="code-block" data-ref="E1" data-desc="Footer section with copyright information.">
+    <footer>
+      <p>&copy; 2026 Vigilance Proprietary Security. All Rights Reserved.</p>
+    </footer>
+  </div>
 
   <!-- JS -->
   <script>
@@ -174,5 +205,6 @@
       });
     });
   </script>
+
 </body>
 </html>
