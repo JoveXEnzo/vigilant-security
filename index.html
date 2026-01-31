@@ -4,349 +4,97 @@
   <meta charset="UTF-8">
   <title>Vigilance Proprietary Security</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- ================= GLOBAL STYLES ================= -->
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-      background: #0a0a0a;
-      color: #ffffff;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ================= NAV BAR ================= */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 70px;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(8px);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 40px;
-      z-index: 1000;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .nav-left img {
-      height: 44px;
-      width: auto;
-    }
-
-    .nav-left span {
-      font-size: 14px;
-      letter-spacing: 1px;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 28px;
-      font-size: 14px;
-      letter-spacing: 1px;
-    }
-
-    nav ul li:hover {
-      color: #ff2b2b;
-    }
-
-    /* ================= HERO SECTION ================= */
-    #hero {
-      position: relative;
-      height: 100vh;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    #hero video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-      z-index: -2;
-    }
-
-    #hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      z-index: -1;
-    }
-
-    .hero-content {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .hero-content h1 {
-      font-size: 44px;
-      letter-spacing: 2px;
-      margin-bottom: 14px;
-    }
-
-    .hero-content p {
-      max-width: 700px;
-      font-size: 18px;
-      opacity: 0.9;
-    }
-
-    .btn {
-      margin-top: 28px;
-      padding: 14px 32px;
-      background: #ff2b2b;
-      border-radius: 4px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      transition: 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #e60000;
-      transform: translateY(-3px);
-    }
-
-    /* ================= VIDEO CAROUSEL ================= */
-    #carousel {
-      padding: 90px 20px;
-      background: #111;
-      text-align: center;
-    }
-
-    #carousel h2 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    #carousel p {
-      opacity: 0.8;
-      margin-bottom: 30px;
-    }
-
-    .carousel-wrapper {
-      max-width: 900px;
-      margin: auto;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.6);
-    }
-
-    .carousel-track {
-      display: flex;
-      transition: transform 0.6s ease-in-out;
-    }
-
-    .carousel-track video {
-      width: 100%;
-      flex-shrink: 0;
-    }
-
-    /* ================= SERVICES ================= */
-    #services {
-      padding: 90px 40px;
-      text-align: center;
-      background: #0a0a0a;
-    }
-
-    #services h2 {
-      font-size: 32px;
-      margin-bottom: 40px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
-    }
-
-    .service-card {
-      background: #151515;
-      padding: 34px;
-      border-radius: 10px;
-      transition: 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 0 25px rgba(255,43,43,0.15);
-    }
-
-    .service-card h3 {
-      margin-bottom: 12px;
-    }
-
-    .service-card p {
-      opacity: 0.85;
-      line-height: 1.5;
-    }
-
-    /* ================= ABOUT ================= */
-    #about {
-      padding: 90px 40px;
-      background: #111;
-      text-align: center;
-    }
-
-    #about h2 {
-      font-size: 32px;
-      margin-bottom: 25px;
-    }
-
-    #about p {
-      max-width: 850px;
-      margin: auto;
-      line-height: 1.6;
-      opacity: 0.9;
-    }
-
-    /* ================= FOOTER ================= */
-    footer {
-      background: #000;
-      padding: 30px;
-      text-align: center;
-      font-size: 14px;
-      opacity: 0.7;
-    }
-
-    /* ================= MOBILE ================= */
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-      }
-
-      .hero-content h1 {
-        font-size: 32px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- ================= NAV BAR ================= -->
-<nav>
-  <div class="nav-left">
-    <img src="vigilant.PNG" alt="Vigilance Proprietary Security Logo">
-    <span>VIGILANCE PROPRIETARY SECURITY</span>
-  </div>
+<!-- Navbar injection -->
+<div id="navbar"></div>
 
-  <ul>
-    <li><a href="#hero">HOME</a></li>
-    <li><a href="#services">SERVICES</a></li>
-    <li><a href="#about">ABOUT</a></li>
-    <li><a href="#contact">CONTACT</a></li>
-  </ul>
-</nav>
-
-<!-- ================= HERO SECTION ================= -->
+<!-- HERO: Fullscreen Background Video -->
 <section id="hero">
   <video autoplay muted loop playsinline>
     <source src="https://cdn.pixabay.com/video/2024/03/04/202875-919288678_small.mp4?download" type="video/mp4">
   </video>
-
   <div class="hero-content">
     <h1>Vigilance Proprietary Security</h1>
-    <p>
-      Professional, discreet, and mission-focused proprietary security solutions
-      designed to protect people, property, and operations worldwide.
-    </p>
-    <a href="#services" class="btn">OUR SERVICES</a>
+    <p>Your safety can’t wait — proactive security protects people, property & peace of mind.</p>
+    <a href="#services" class="btn">SECURE YOUR SPACE</a>
   </div>
 </section>
 
-<!-- ================= CAROUSEL ================= -->
-<section id="carousel">
-  <h2>Operational Presence</h2>
-  <p>Prepared. Alert. Vigilant.</p>
-
-  <div class="carousel-wrapper">
-    <div class="carousel-track" id="carouselTrack">
-      <video autoplay muted loop playsinline>
-        <source src="https://cdn.pixabay.com/video/2024/03/04/202875-919288678_small.mp4?download" type="video/mp4">
-      </video>
-      <video autoplay muted loop playsinline>
-        <source src="https://cdn.pixabay.com/video/2024/03/04/202875-919288678_small.mp4?download" type="video/mp4">
-      </video>
-      <video autoplay muted loop playsinline>
-        <source src="https://cdn.pixabay.com/video/2024/03/04/202875-919288678_small.mp4?download" type="video/mp4">
-      </video>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SERVICES ================= -->
-<section id="services">
-  <h2>Security Services</h2>
-
-  <div class="services-grid">
-    <div class="service-card">
-      <h3>Proprietary Security</h3>
-      <p>Dedicated in-house style security designed specifically for your organization.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>Mobile Patrol</h3>
-      <p>Visible deterrence through marked and unmarked patrol operations.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>Event Protection</h3>
-      <p>Professional access control and crowd safety for private and corporate events.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= ABOUT ================= -->
-<section id="about">
-  <h2>About Vigilance</h2>
+<!-- STATISTICS / URGENT MESSAGE -->
+<section id="stats">
+  <h2>Real Crime Facts (LA & OC)</h2>
   <p>
-    Vigilance Proprietary Security is built on discipline, accountability, and preparedness.
-    Our mission is proactive risk mitigation through trained personnel and strategic presence.
-    We protect without compromise.
+    In Los Angeles, violent crime levels remain significantly above national averages,
+    and property crime continues to impact residents and businesses across the city — 
+    creating gaps in safety that traditional policing alone can’t fill.  [oai_citation:4‡SGV PATROL SECURITY](https://www.sgvpatrol.com/los-angeles-security?utm_source=chatgpt.com)
+  </p>
+  <p>
+    Meanwhile in Orange County, violent crime is lower than LA, but theft, vehicle crime,
+    and break‑ins still create financial and emotional stress for local businesses and homes.  [oai_citation:5‡Valley Alarm](https://www.valleyalarm.com/orange-county-crime-statistics/?utm_source=chatgpt.com)
   </p>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- CAROUSEL: Safety / Security GIFS -->
+<section id="carousel">
+  <h2>Security in Action</h2>
+  <p>Your peace of mind starts with a visible deterrent.</p>
+
+  <div class="carousel-wrapper">
+    <div class="carousel-track" id="carouselTrack">
+      <!-- GIF placeholders — replace with real GIF URLs -->
+      <img src="https://media.giphy.com/media/3o7aCTfyhYawdOXcFW/giphy.gif" alt="Security Patrol">
+      <img src="https://media.giphy.com/media/l4FGuhL4U2WyjdkaY/giphy.gif" alt="Surveillance Safety">
+      <img src="https://media.giphy.com/media/26gJA2CZmIGoW8lWU/giphy.gif" alt="Rapid Response">
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES / BENEFITS -->
+<section id="services">
+  <h2>How Security Serves You</h2>
+
+  <div class="service-card">
+    <h3>Visible Deterrence</h3>
+    <p>Trained guards and patrol presence reduce the chances of theft, vandalism, and violent incidents before they start.  [oai_citation:6‡Security of America](https://securityofamerica.com/expansion-and-community-impact-security-services/?utm_source=chatgpt.com)</p>
+  </div>
+
+  <div class="service-card">
+    <h3>24/7 Response</h3>
+    <p>Our workforce is proactive — scanning, detecting, and managing threats faster than waiting for delayed emergency responses.  [oai_citation:7‡SGV PATROL SECURITY](https://www.sgvpatrol.com/los-angeles-security?utm_source=chatgpt.com)</p>
+  </div>
+
+  <div class="service-card">
+    <h3>Customized Protection</h3>
+    <p>Every environment is unique — we tailor security plans to your specific risk profile and operational needs.  [oai_citation:8‡Security of America](https://securityofamerica.com/expansion-and-community-impact-security-services/?utm_source=chatgpt.com)</p>
+  </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section id="cta">
+  <h2>Don’t Wait Until It’s Too Late</h2>
+  <p>
+    Every moment without professional security is a moment where risk increases. Take control of your peace of mind — contact us now.
+  </p>
+  <a href="#contact" class="btn">GET PROTECTED</a>
+</section>
+
+<!-- FOOTER with contact -->
 <footer id="contact">
-  © 2026 Vigilance Proprietary Security · All Rights Reserved
+  <p>Vigilance Proprietary Security — Your safety is our mission.</p>
+  <p>Email: info@vigilancesecurity.com | Call: (555) 123‑4567</p>
 </footer>
 
-<!-- ================= CAROUSEL SCRIPT ================= -->
+<!-- Simple Carousel Logic -->
 <script>
   const track = document.getElementById("carouselTrack");
-  let slideIndex = 0;
-
+  let idx = 0;
   setInterval(() => {
-    slideIndex = (slideIndex + 1) % 3;
-    track.style.transform = `translateX(-${slideIndex * 100}%)`;
-  }, 5000);
+    idx = (idx + 1) % track.children.length;
+    track.style.transform = `translateX(-${idx * 100}%)`;
+  }, 4500);
 </script>
 
 </body>
