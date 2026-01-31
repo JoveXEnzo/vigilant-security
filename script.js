@@ -131,3 +131,10 @@ function submitForm(event) {
         })
             .then(() => alert('Inquiry sent successfully!'))
             .catch(() => alert('There was an error sending your message. Please try again
+
+    const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+mobileMenu.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});                           
