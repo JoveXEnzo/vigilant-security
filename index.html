@@ -1,22 +1,178 @@
-<!-- Navigation Bar Start -->
-<header class="header">
-  <div class="nav-container">
-    <a href="index.html" class="logo">
-      <img src="vigilant.PNG" alt="Vigilance Logo">
-    </a>
-    <nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vigilance Proprietary Security</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* --- Reset / basic styling --- */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: Arial, sans-serif; line-height:1.6; }
+    a { text-decoration:none; color:inherit; }
+
+    /* --- Header / Nav --- */
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #111;
+      z-index: 100;
+      padding: 10px 20px;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .logo img { height: 50px; }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    .nav-links li a {
+      color: #fff;
+      font-weight: bold;
+      padding: 5px 0;
+      position: relative;
+      transition: color 0.3s;
+    }
+    .nav-links li a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #f39c12;
+      transition: 0.3s;
+    }
+    .nav-links li a:hover::after {
+      width: 100%;
+    }
+    .nav-links li a:hover { color: #f39c12; }
+
+    /* --- Mobile menu --- */
+    .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap:5px; }
+    .menu-toggle span { width:25px; height:3px; background:#fff; }
+
+    @media (max-width:768px){
+      .nav-links { 
+        display:none; 
+        flex-direction: column;
+        position: absolute;
+        top:65px;
+        right:0;
+        background:#111;
+        width:200px;
+        padding:20px;
+      }
+      .nav-links.active { display:flex; }
+      .menu-toggle { display:flex; }
+    }
+
+    /* --- Sections --- */
+    section { padding:80px 20px; max-width:1200px; margin:auto; }
+    #home { text-align:center; padding-top:120px; color:#111; }
+    #home h1 { font-size:3em; margin-bottom:20px; }
+    #home img { height:120px; margin-bottom:20px; }
+
+    #services h2, #about h2, #contact h2 { text-align:center; margin-bottom:40px; color:#111; }
+
+    /* --- GIF Grid --- */
+    .gif-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      justify-items:center;
+    }
+    .gif-grid img { width:100%; max-width:300px; border-radius:10px; }
+
+    /* --- Footer --- */
+    footer { text-align:center; padding:20px; background:#111; color:#fff; margin-top:40px; }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header / Nav -->
+  <header>
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <img src="vigilant.PNG" alt="Vigilance Logo">
+      </a>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
-    <div class="menu-toggle" id="mobile-menu">
-      <span></span>
-      <span></span>
-      <span></span>
+      <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-  </div>
-</header>
-<!-- Navigation Bar End -->
+  </header>
+
+  <!-- Home Section -->
+  <section id="home">
+    <img src="vigilant.PNG" alt="Vigilance Logo">
+    <h1>Welcome to Vigilance Proprietary Security</h1>
+    <p>Your trusted partner in professional security services.</p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="gif-grid">
+      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2cxNHk4cnd4ZW56MWlwbGF0NDQ3aGx3dzgxdWdpaXN6Ymdvbm1tZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/p8UYAuBwP5BfZrTM4w/giphy.gif" alt="Service 1">
+      <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnB2ZTBic293dHVxMDRqZjlqdXM1dGFhNGdsYXh3MXRqZG95OWI1NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U04y6eLQGgWrK/giphy.gif" alt="Service 2">
+      <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDluajBmajdvOG10cXRvbHl6cTZodWJremVvNjVxNm9wejMyZTl2MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6MbmTd7iUDK5AiHu/giphy.gif" alt="Service 3">
+      <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2F2MjViNmltM3o3bGlxZWpuMnR6cmRnZHk3d3QzOHk3czR3NTBlYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U5OqOdBmeLH7dKi7qB/giphy.gif" alt="Service 4">
+      <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjZ2aDVkZWl4eTdnbmE5MnlrczczdTlkcHlrYTAzNmVsc25oZHZqMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlPaSlhsnll4yOc/giphy.gif" alt="Service 5">
+      <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGVsbGV5bHRzY3UxYzAzZW04NjN2OXphZ3F4cmF6am52Y25yYWR4dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aZ9thuwFYNjHO/giphy.gif" alt="Service 6">
+      <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZW82cnc1OTloMHE5dGwwaWhveG9ybnQ3OGV1azdwbmt3dWpuMzYydiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MOKWTfBlKmjyE/giphy.gif" alt="Service 7">
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Vigilance Proprietary Security is committed to providing top-tier security services in Anaheim and Upland, CA. Our trained professionals ensure safety and peace of mind for residential, commercial, and event clients.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@vigilance.com | Phone: (555) 123-4567</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Vigilance Proprietary Security. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Mobile menu toggle
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    mobileMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e){
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({behavior:'smooth'});
+      });
+    });
+  </script>
+</body>
+</html>
