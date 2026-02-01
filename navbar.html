@@ -1,0 +1,28 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = `
+    <nav class="vps-navbar">
+      <div class="vps-nav-left">
+        <img 
+          src="vigilant.PNG" 
+          alt="Vigilance Proprietary Security Logo" 
+          class="vps-logo"
+        />
+        <span class="vps-brand">
+          VIGILANCE PROPRIETARY SECURITY
+        </span>
+      </div>
+
+      <ul class="vps-nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#stats">Crime Stats</a></li>
+        <li><a href="#contact" class="cta">Get Protected</a></li>
+      </ul>
+    </nav>
+  `;
+
+  const mountPoint = document.getElementById("navbar");
+  if (mountPoint) {
+    mountPoint.innerHTML = navbar;
+  }
+});
