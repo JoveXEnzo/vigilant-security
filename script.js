@@ -1,9 +1,12 @@
+// AAA200001: FULL SITE SCRIPT – MOBILE-FIRST
+
 document.addEventListener("DOMContentLoaded", () => {
 
   // ========================
   // 1️⃣ NAVBAR INJECTION
   // ========================
   const navbarHTML = `
+    <!-- AAA273638: NAVBAR INJECTION -->
     <nav class="vps-navbar">
       <div class="vps-nav-left">
         <img src="vigilant.PNG" alt="Vigilance Logo" class="vps-logo">
@@ -17,85 +20,63 @@ document.addEventListener("DOMContentLoaded", () => {
       </ul>
     </nav>
   `;
+  const navbarMount = document.getElementById("navbar");
+  if (navbarMount) navbarMount.innerHTML = navbarHTML;
 
-  const mountPoint = document.getElementById("navbar");
-  if (mountPoint) {
-    mountPoint.innerHTML = navbarHTML;
+  // ========================
+  // 2️⃣ FOOTER INJECTION
+  // ========================
+  const footerPoint = document.getElementById("footer");
+  if (footerPoint) {
+    footerPoint.innerHTML = `
+      <!-- AAA273639: FOOTER INJECTION -->
+      <footer class="vps-footer">
+        <p>&copy; ${new Date().getFullYear()} Vigilance Proprietary Security. All Rights Reserved.</p>
+      </footer>
+    `;
   }
 
   // ========================
-  // 2️⃣ SMOOTH SCROLL FOR INTERNAL LINKS
+  // 3️⃣ SMOOTH SCROLL
   // ========================
-  const links = document.querySelectorAll('.vps-nav-links a[href^="#"]');
-  links.forEach(link => {
+  const scrollLinks = document.querySelectorAll('.vps-nav-links a[href^="#"], .hero-btn');
+  scrollLinks.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
       const target = document.querySelector(link.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   });
 
   // ========================
-  // 3️⃣ HERO BUTTON CLICK (CTA)
+  // 4️⃣ SERVICES CAROUSEL
   // ========================
-  const heroBtn = document.querySelector('.hero-btn');
-  if (heroBtn) {
-    heroBtn.addEventListener('click', () => {
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-      }
+  const carouselContainer = document.getElementById('services-carousel');
+  if (carouselContainer) {
+    const gifs = [
+      'https://media.giphy.com/media/l0ExncehJzexFpRHq/giphy.gif',
+      'https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif',
+      'https://media.giphy.com/media/xUPGcmJ2dYtYZy1BuI/giphy.gif'
+    ];
+    gifs.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'Security GIF';
+      img.style.borderRadius = '8px';
+      carouselContainer.appendChild(img);
     });
+
+    // Auto-scroll
+    let pos = 0;
+    setInterval(() => {
+      pos += 260;
+      if (carouselContainer.scrollWidth - pos < carouselContainer.clientWidth) pos = 0;
+      carouselContainer.scrollTo({ left: pos, behavior: 'smooth' });
+    }, 4000);
   }
 
   // ========================
-  // 4️⃣ SERVICES CAROUSEL (GIFs)
-  // ========================
-  const carouselContainer = document.createElement('div');
-  carouselContainer.id = 'services-carousel';
-  carouselContainer.style.display = 'flex';
-  carouselContainer.style.overflow = 'hidden';
-  carouselContainer.style.gap = '15px';
-  carouselContainer.style.marginTop = '30px';
-  carouselContainer.style.justifyContent = 'center';
-
-  const gifs = [
-    'https://media.giphy.com/media/l0ExncehJzexFpRHq/giphy.gif', // patrol
-    'https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif', // security alert
-    'https://media.giphy.com/media/xUPGcmJ2dYtYZy1BuI/giphy.gif'  // surveillance
-  ];
-
-  gifs.forEach(src => {
-    const img = document.createElement('img');
-    img.src = src;
-    img.alt = 'Security GIF';
-    img.style.width = '250px';
-    img.style.borderRadius = '8px';
-    carouselContainer.appendChild(img);
-  });
-
-  const servicesSection = document.getElementById('services');
-  if (servicesSection) {
-    servicesSection.appendChild(carouselContainer);
-  }
-
-  // Simple auto-scroll effect for carousel
-  let scrollPosition = 0;
-  setInterval(() => {
-    scrollPosition += 260; // width + gap
-    if (carouselContainer.scrollWidth - scrollPosition < carouselContainer.clientWidth) {
-      scrollPosition = 0;
-    }
-    carouselContainer.scrollTo({
-      left: scrollPosition,
-      behavior: 'smooth'
-    });
-  }, 4000);
-
-  // ========================
-  // 5️⃣ OPTIONAL: STATS COUNTER ANIMATION
+  // 5️⃣ STATS FADE-IN
   // ========================
   const statsSection = document.getElementById('stats');
   if (statsSection) {
@@ -104,15 +85,11 @@ document.addEventListener("DOMContentLoaded", () => {
       li.style.opacity = 0;
       li.style.transition = 'opacity 1s ease';
     });
-
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          lis.forEach(li => li.style.opacity = 1);
-        }
+        if (entry.isIntersecting) lis.forEach(li => li.style.opacity = 1);
       });
     }, { threshold: 0.3 });
-
     observer.observe(statsSection);
   }
 
