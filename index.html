@@ -1,80 +1,105 @@
+<!-- AAA100001: INDEX.HTML -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Vigilance Proprietary Security</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- NAVBAR: injected by script.js -->
+  <!-- NAVBAR INJECTION -->
   <div id="navbar"></div>
 
-  <!-- HERO: large video background -->
+  <!-- HERO SECTION -->
   <section id="hero">
     <video autoplay muted loop playsinline>
       <source src="https://cdn.pixabay.com/video/2024/03/04/202875-919288678_small.mp4?download" type="video/mp4">
     </video>
-    <div class="hero-content">
+
+    <div class="hero-overlay">
       <h1>Vigilance Proprietary Security</h1>
-      <p>Professional protection services to deter crime and protect assets.</p>
-      <a href="#services" class="btn">Secure Your Site Today</a>
-    </div>
-  </section>
-
-  <!-- STATISTICS -->
-  <section id="stats">
-    <h2>Local Safety Snapshot</h2>
-    <p>Los Angeles and Orange County experience property and violent crime levels that stress public resources. Private security acts as a proactive deterrent and strengthens protection beyond what public safety alone can offer.</p>
-  </section>
-
-  <!-- CAROUSEL -->
-  <section id="carousel">
-    <h2>Our Security in Action</h2>
-    <div class="carousel-wrapper">
-      <div class="carousel-track" id="carouselTrack">
-        <img src="https://media.giphy.com/media/3o7aCTfyhYawdOXcFW/giphy.gif" alt="Security Patrol">
-        <img src="https://media.giphy.com/media/l4FGuhL4U2WyjdkaY/giphy.gif" alt="24/7 Monitoring">
-        <img src="https://media.giphy.com/media/26gJA2CZmIGoW8lWU/giphy.gif" alt="Rapid Response">
-      </div>
+      <p>
+        Proactive, professional, and intelligence-driven proprietary security
+        designed to prevent incidents before they happen.
+      </p>
+      <a href="#contact" class="hero-btn">Request Protection</a>
     </div>
   </section>
 
   <!-- SERVICES -->
   <section id="services">
-    <h2>Security Services We Offer</h2>
-    <div class="service-card">
-      <h3>Proprietary Security</h3>
-      <p>Dedicated personnel providing continuous protection tailored to your environment.</p>
-    </div>
-    <div class="service-card">
-      <h3>Mobile Patrol</h3>
-      <p>Highly visible patrol presence to deter crime and alert authorities as needed.</p>
-    </div>
-    <div class="service-card">
-      <h3>Event Security</h3>
-      <p>Professional event protection from crowd control to VIP safeguarding.</p>
+    <h2>Our Services</h2>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Patrol & Presence</h3>
+        <p>
+          Visible security reduces crime by up to 60% in high-risk areas.
+          Our patrol units deter opportunistic and organized threats.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Asset Protection</h3>
+        <p>
+          Construction sites, logistics yards, commercial property —
+          secured through layered deterrence and rapid response.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Risk Prevention</h3>
+        <p>
+          Security is not reaction. It’s prediction, positioning,
+          and control before escalation occurs.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- CONTACT / FOOTER -->
-  <footer id="contact">
-    <p>Vigilance Proprietary Security — Protecting What Matters Most</p>
-    <p>Email: info@vigilancesecurity.com | Phone: (555) 123‑4567</p>
-  </footer>
+  <!-- CAROUSEL -->
+  <section id="carousel">
+    <h2>Visual Security in Action</h2>
+    <div id="services-carousel"></div>
+  </section>
 
-  <!-- CAROUSEL SCRIPT -->
-  <script>
-    const track = document.getElementById("carouselTrack");
-    let idx = 0;
-    setInterval(() => {
-      idx = (idx + 1) % track.children.length;
-      track.style.transform = `translateX(-${idx * 100}%)`;
-    }, 4000);
-  </script>
+  <!-- STATS -->
+  <section id="stats">
+    <h2>Why Security Is No Longer Optional</h2>
 
-  <!-- NAVBAR SCRIPT -->
+    <p>
+      Los Angeles and Orange County continue to experience elevated
+      levels of property crime, theft, and trespassing.
+    </p>
+
+    <ul>
+      <li>Commercial theft incidents remain significantly elevated</li>
+      <li>Unsecured sites are targeted repeatedly once breached</li>
+      <li>Visible security presence drastically lowers repeat incidents</li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Act Before It Happens</h2>
+    <p>
+      Security failures cost more than security prevention.
+      The time to protect assets is before an incident — not after.
+    </p>
+
+    <a href="mailto:info@vigilancesecurity.com" class="hero-btn">
+      Request a Security Assessment
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>
