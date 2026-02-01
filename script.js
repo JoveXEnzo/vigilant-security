@@ -94,3 +94,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
+// AAA200001 – NAVBAR INJECTION
+document.addEventListener("DOMContentLoaded", () => {
+  const navbarTarget = document.getElementById("navbar");
+  if (!navbarTarget) {
+    console.error("Navbar target div not found");
+    return;
+  }
+
+  fetch("navbar.html")
+    .then(response => {
+      if (!response.ok) throw new Error("Navbar HTML fetch failed");
+      return response.text();
+    })
+    .then(data => {
+      navbarTarget.innerHTML = data;
+    })
+    .catch(err => console.error("Error loading navbar:", err));
+});
