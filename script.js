@@ -113,3 +113,5 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(err => console.error("Error loading navbar:", err));
 });
+
+console.log("ANIMATIONS LOADED 🔥");
