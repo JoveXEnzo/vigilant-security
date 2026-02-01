@@ -296,3 +296,73 @@ body {
   .service-card { width: 280px; }
   #services-carousel img { width: 300px; }
 }
+
+/* HERO LOGO SECTION */
+.hero-logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px;
+  background: #000; /* black background for contrast */
+  color: #fff;
+}
+
+.hero-logo-container {
+  max-width: 900px;
+}
+
+.hero-logo {
+  width: 300px; /* adjust size as needed */
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+/* Hero title */
+.hero-logo-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #d4af37; /* gold accent */
+}
+
+/* Hero paragraph */
+.hero-logo-section p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* Hero CTA button */
+.hero-logo-section .hero-btn {
+  background: #d4af37;
+  color: #000;
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.hero-logo-section .hero-btn:hover {
+  background: #fff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media(max-width: 767px) {
+  .hero-logo-section h1 {
+    font-size: 1.8rem;
+  }
+  .hero-logo-section p {
+    font-size: 1rem;
+  }
+  .hero-logo {
+    width: 180px;
+  }
+  .hero-logo-section .hero-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
