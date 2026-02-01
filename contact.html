@@ -1,36 +1,66 @@
+<!-- AAA100003: CONTACT.HTML -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Vigilant Proprietary Security</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Contact – Vigilance Proprietary Security</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="navbar"></div>
 
-    <section id="contact-hero" class="parallax">
-        <h1>Get in Touch</h1>
-    </section>
+  <!-- NAVBAR -->
+  <div id="navbar"></div>
 
-    <section id="contact-info">
-        <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-        <p><i class="fas fa-envelope"></i> info@vigilantsecurity.com</p>
-        <p><i class="fas fa-map-marker-alt"></i> Upland & Anaheim, CA</p>
-    </section>
+  <!-- CONTACT HERO -->
+  <section id="hero-contact">
+    <video autoplay muted loop playsinline>
+      <source src="https://cdn.pixabay.com/video/2024/03/04/202875-919288678_small.mp4?download" type="video/mp4">
+    </video>
+    <div class="hero-overlay">
+      <h1>Contact Vigilance Proprietary Security</h1>
+      <p>
+        Reach out to schedule a security assessment or inquire about our services.
+      </p>
+    </div>
+  </section>
 
-    <section id="contact-form-section">
-        <form id="contact-form" onsubmit="submitForm(event)">
-            <input type="text" placeholder="Name" required aria-label="Name">
-            <input type="email" placeholder="Email" required aria-label="Email">
-            <textarea placeholder="Message" required aria-label="Message"></textarea>
-            <button type="submit" class="btn">Submit Inquiry</button>
-        </form>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.0... [Upland/Anaheim embed]" width="600" height="450" loading="lazy"></iframe>
-    </section>
+  <!-- CONTACT FORM SECTION -->
+  <section id="contact-form-section">
+    <h2>Get Protected Today</h2>
+    <p>Fill out the form below and one of our security specialists will contact you immediately.</p>
 
-    <div id="footer"></div>
-    <script src="script.js"></script>
+    <form id="contact-form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+
+      <label for="message">Message / Security Details</label>
+      <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+
+      <button type="submit" class="hero-btn">Submit Request</button>
+    </form>
+  </section>
+
+  <!-- CONTACT INFO SECTION -->
+  <section id="contact-info">
+    <h2>Contact Information</h2>
+    <p>Email: <a href="mailto:info@vigilancesecurity.com">info@vigilancesecurity.com</a></p>
+    <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+    <p>Serving Los Angeles, Orange County, and surrounding areas</p>
+  </section>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 </html>
