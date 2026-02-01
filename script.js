@@ -115,3 +115,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 console.log("ANIMATIONS LOADED 🔥");
+
+// BLOCK: nav-magnetic-script
+const navEl = document.getElementById("main-nav");
+
+document.addEventListener("mousemove", (e) => {
+  const x = (window.innerWidth / 2 - e.clientX) / 40;
+  navEl.style.transform = `translateX(${x}px)`;
+});
