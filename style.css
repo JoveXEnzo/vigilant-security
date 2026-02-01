@@ -1,89 +1,95 @@
-/* Header/Nav Container */
-.header {
-  width: 100%;
-  background-color: #111;
-  padding: 10px 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vigilance Proprietary Security</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: auto;
-}
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-.logo img {
-  height: 50px;
-}
+  <!-- NAVBAR INJECTION TARGET -->
+  <div id="navbar"></div>
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <video autoplay muted loop playsinline>
+      <source src="https://cdn.pixabay.com/video/2024/03/04/202875-919288678_small.mp4?download" type="video/mp4">
+    </video>
 
-.nav-links li a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  position: relative;
-  transition: color 0.3s;
-}
+    <div class="hero-overlay">
+      <h1>Vigilance Proprietary Security</h1>
+      <p>
+        Proactive, professional, and intelligence-driven proprietary security
+        designed to prevent incidents before they happen.
+      </p>
+      <a href="#contact" class="hero-btn">Request Protection</a>
+    </div>
+  </section>
 
-.nav-links li a::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background-color: #f39c12;
-  transition: 0.3s;
-}
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>Our Services</h2>
 
-.nav-links li a:hover::after {
-  width: 100%;
-}
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Patrol & Presence</h3>
+        <p>
+          Visible security reduces crime by up to 60% in high-risk areas.
+          Our patrol units deter opportunistic and organized threats.
+        </p>
+      </div>
 
-.nav-links li a:hover {
-  color: #f39c12;
-}
+      <div class="service-card">
+        <h3>Asset Protection</h3>
+        <p>
+          Construction sites, logistics yards, commercial property —
+          secured through layered deterrence and rapid response.
+        </p>
+      </div>
 
-/* Mobile Menu Toggle */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
+      <div class="service-card">
+        <h3>Risk Prevention</h3>
+        <p>
+          Security is not reaction. It’s prediction, positioning,
+          and control before escalation occurs.
+        </p>
+      </div>
+    </div>
+  </section>
 
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-}
+  <!-- STATS -->
+  <section id="stats">
+    <h2>Why Security Is No Longer Optional</h2>
 
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 65px;
-    right: 0;
-    background-color: #111;
-    flex-direction: column;
-    width: 200px;
-    padding: 20px;
-  }
-  .nav-links.active {
-    display: flex;
-  }
-  .menu-toggle {
-    display: flex;
-  }
-}
+    <p>
+      Los Angeles and Orange County continue to experience elevated
+      levels of property crime, theft, and trespassing.
+    </p>
+
+    <ul>
+      <li>Commercial theft incidents remain significantly elevated</li>
+      <li>Unsecured sites are targeted repeatedly once breached</li>
+      <li>Visible security presence drastically lowers repeat incidents</li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Act Before It Happens</h2>
+    <p>
+      Security failures cost more than security prevention.
+      The time to protect assets is before an incident — not after.
+    </p>
+
+    <a href="mailto:info@vigilancesecurity.com" class="hero-btn">
+      Request a Security Assessment
+    </a>
+  </section>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
